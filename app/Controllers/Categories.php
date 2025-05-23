@@ -115,9 +115,12 @@ class Categories extends BaseController
             'title' => 'Remove Categories', 'categories' => $data
         ]);
     }
-    public function delete($id): string
+    public function delete(): string
     {
-        // Form will pass data into here to delete mulple categories at once
+        //retrieve catecory(ies) to delete
+        $catsSelected = $this->request->getPost('catOptions');
+
+        dd($catsSelected);
         
         //open DB to return all categories
         $db = db_connect();

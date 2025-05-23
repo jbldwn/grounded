@@ -12,6 +12,7 @@ $routes->get('/categories', 'Categories::index');
 $routes->get('/categories/new', 'Categories::new');
 $routes->post('/categories/add', 'Categories::add');
 $routes->get('/categories/remove', 'Categories::remove');
+$routes->post('/categories/delete', 'Categories::delete');
 
 // Questions
 $routes->get('/questions/add', 'Questions::add');
