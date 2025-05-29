@@ -120,15 +120,16 @@ class Categories extends BaseController
         //retrieve catecory(ies) to delete
         $catsSelected = $this->request->getPost('catOptions');
 
-        dd($catsSelected);
+        // selected categories are in an array
         
-        //open DB to return all categories
-        $db = db_connect();
-
-        // new CategoriesModel to house data
+        // new CategoriesModel to remove data
         $model = new CategoriesModel();
 
-        //returns pulled data from table
+        //remove data from model
+        foreach($catsSelected as $category){
+            $catID = (int)$category;
+            $model->delete($catID);
+        }
         $data = $model->findAll();
 
         // dd($data);

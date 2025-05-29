@@ -32,7 +32,7 @@ Categories
         <?php foreach($categories as $category): ?>
 
         <a href="#" role="button" class="btn btn-outline-warning col">
-            <?= form_input('catOptions[]', $category['category'], ['class'=>'btn btn-outline-success col'], 'checkbox')?>
+            <?= form_input('catOptions[]',  $category['id'], ['class'=>'btn btn-outline-success col'], 'checkbox')?>
             <?= form_label($category['category']) ?>
         </a>
 
