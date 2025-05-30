@@ -139,8 +139,8 @@ class Categories extends BaseController
         }
         $data = $model->findAll();
 
-        return view('Categories/remove', [
-            'title' => 'Remove Categories', 'categories' => $data
+        return view('Categories/index', [
+            'title' => 'Categories', 'categories' => $data
         ]);
     }
 }
