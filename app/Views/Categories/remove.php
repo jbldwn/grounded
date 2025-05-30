@@ -30,11 +30,13 @@ Categories
 
     <div class="options row row-cols-6 row-cols-sm-3" style="margin-bottom: 50px;">
         <?php foreach($categories as $category): ?>
+        <!-- Working Buttong -->
+        <input type="checkbox" name='catOptions[]' class="btn-check" id="btn-check-<?= $category['id']?>"
+            value="<?= $category['id'] ?>" autocomplete="off">
+        <label class="btn btn-outline-warning"
+            for="btn-check-<?= $category['id']?>"><?= $category['category'] ?></label>
+        <!-- END Working Buttong -->
 
-        <a href="#" role="button" class="btn btn-outline-warning col">
-            <?= form_input('catOptions[]',  $category['id'], ['class'=>'btn btn-outline-success col',], 'checkbox')?>
-            <?= form_label($category['category']) ?>
-        </a>
 
 
         <?php endforeach; ?>
