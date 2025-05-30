@@ -35,6 +35,8 @@ class Categories extends BaseController
     public function add(): string
     {
         //retrive Question data
+        $rawQuestion = $this->request->getPost('question');
+        dd($rawQuestion);
 
         return view('categories/selected', [
             'category' => $data['category'], 'title' => $data['category'],'categories' => $data
