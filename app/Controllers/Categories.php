@@ -65,19 +65,35 @@ class Categories extends BaseController
         //establish model
         $model = new CategoriesModel();
 
+        
+
+        //check if category already exists
+        $existingCategory = $model->where('category', $rawCategory)->first();
+
+
+        //if it does, get id and redirect to add questions page
+        if($existingCategory != null){
+
+        //get new id and new article
+        $addedCategory = $existingCategory;
+
+        }else{
+        //otherwise, add category:
+
         //insert new category to DB
         $model->insert($newCategory);
-
-        //get all categories
-        $categories = $model->findAll();
 
         //get new id and new article
         $categoryId = $model->getInsertID();
         $addedCategory = $model->find($categoryId);
 
+        //get all categories
+        $categories = $model->findAll();
+        }
+
         //redirect to new category
         //take to add questions to Category page
-        return view('Questions/new', [
+        return view('Questions/new', [ 'categoryId' => $addedCategory['id'],
             'category' => $addedCategory['category'], 'title' => "Add Questions", 'categories' => $categories
         ]);
         // dd($newCategory);
