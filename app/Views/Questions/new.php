@@ -1,5 +1,15 @@
 <?= $this->extend('layouts/default.php')?>
 
+<?= $this-> section('breadCrumb') ?>
+<div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Categories</li>
+        <li class="breadcrumb-item active" aria-current="page"><?= $category ?></li>
+        <li class="breadcrumb-item " aria-current="page"><?= $title ?></li>
+    </ol>
+</div>
+<?= $this->endSection(); ?>
+
 <?= $this-> section('content') ?>
 
 <div class="categories">
@@ -11,24 +21,26 @@
     <!-- Add form below -->
     <?php
     helper('form');
-    echo form_open('categories/add');
+    echo form_open('questions/add');
 ?>
     <div class="row justify-content-between align-items-center" style="margin-bottom: 20px;">
-        <?= form_label('Question:', 'title',['class'=>'col-lg-1 col-md-2 offset-1 offset-sm-0']) ?>
-        <?= form_input('title', '', ['placeholder'=> 'subject...', 'class'=>'col-lg-7 col-md-4'], 'text')?>
-        <?= form_submit("addArticle", 'Save', ['class'=> 'col-lg-2 col-md-2 btn btn-primary']) ?>
+        <?= form_label('Question:', 'question',['class'=>'col-lg-1 col-md-2 offset-1 offset-sm-0']) ?>
+        <?= form_input('title', '', ['placeholder'=> 'New Question...', 'class'=>'col-lg-7 col-md-4'], 'text')?>
+        <?= form_submit("addArticle", 'Add', ['class'=> 'col-lg-2 col-md-2 btn btn-primary']) ?>
     </div>
     <div class="row justify-content-between align-items-start">
-        <div class="col-lg-1 col-md-2 offset-1 offset-sm-0">Select:</div>
+        <div class="col-lg-1 col-md-2 offset-1 offset-sm-0">Categories:</div>
         <div class="col-lg-7 col-md-4">
             <?php foreach($categories as $categoryBtn): ?>
             <?php if($categoryId == $categoryBtn['id']): ?>
-            <button type="button" class="btn btn-outline-secondary active" style="margin:3px;" data-bs-toggle="button"
-                aria-pressed="true" autocomplete="off"><?= $categoryBtn['category'] ?></button>
+            <?= form_input('selected[]', $categoryBtn['category'], ['class'=>"btn btn-outline-secondary active", 'data-bs-toggle'=>"button"], 'button' ) ?>
+
             <?php else: ?>
-            <button type="button" class="btn btn-outline-secondary" style="margin:3px;" data-bs-toggle="button"
-                autocomplete="off"><?= $categoryBtn['category'] ?></button>
+            <?= form_input('selected[]', $categoryBtn['category'], ['class'=>"btn btn-outline-secondary", 'data-bs-toggle'=>"button"], 'button' ) ?>
+
             <?php endif; ?>
+
+
             <?php endforeach; ?>
         </div>
         <div class="col-lg-2 col-md-2"></div>
