@@ -7,9 +7,6 @@ class Categories extends BaseController
 {
     public function index(): string
     {
-        //open DB to return all categories
-        $db = db_connect();
-
         // new CategoriesModel to house data
         $model = new CategoriesModel();
 
@@ -23,10 +20,6 @@ class Categories extends BaseController
     }
     public function add(): string
     {
-        //open DB to return all categories
-
-        $db = db_connect();
-
         // new CategoriesModel to house data
         $model = new CategoriesModel();
 

@@ -77,9 +77,8 @@ class Categories extends BaseController
 
         //redirect to new category
         //take to add questions to Category page
-        return view('Categories/questions', [
+        return view('Questions/new', [
             'category' => $addedCategory['category'], 'title' => "Add Questions", 'categories' => $categories
-
         ]);
         // dd($newCategory);
     }
@@ -120,8 +119,6 @@ class Categories extends BaseController
         //retrieve catecory(ies) to delete
         $catsSelected = $this->request->getPost('catOptions');
 
-        // selected categories are in an array
-        
         // new CategoriesModel to remove data
         $model = new CategoriesModel();
 
@@ -131,8 +128,6 @@ class Categories extends BaseController
             $model->delete($catID);
         }
         $data = $model->findAll();
-
-        // dd($data);
 
         return view('Categories/remove', [
             'title' => 'Remove Categories', 'categories' => $data
