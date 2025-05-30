@@ -15,7 +15,8 @@ $routes->get('/categories/remove', 'Categories::remove');
 $routes->post('/categories/delete', 'Categories::delete');
 
 // Questions
-$routes->get('/questions/add', 'Questions::add');
+$routes->get('/questions/new', 'Questions::new');
+$routes->post('/questions/add', 'Questions::add');
 
 // Account details
 $routes->get('/account', 'Account::index');
