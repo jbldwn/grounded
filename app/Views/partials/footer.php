@@ -2,7 +2,7 @@
     <div class="container d-flex flex-column align-items-center justify-content-center"
         style="margin-top: 50px; padding: 20px;">
         <h1>Enjoying the app?</h1>
-        <p style="margin: 5px 0 15px">Please consider Donating</p>
+        <p style="margin: 5px 0 15px">Please Consider Donating</p>
         <div class='primary d-flex justify-content-between' style="font-size: 1.5em;">
             <i class="bi bi-cup-hot"></i>
             <i class="bi bi-paypal" style="margin: 0 35px"></i>
