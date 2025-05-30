@@ -18,7 +18,7 @@ class Categories extends BaseController
             'title' => 'Categories', 'categories' => $data
         ]);
     }
-    public function add(): string
+    public function new(): string
     {
         // new CategoriesModel to house data
         $model = new CategoriesModel();
@@ -29,6 +29,14 @@ class Categories extends BaseController
         // dd($data);
 
         return view('questions/add', [
+            'category' => $data['category'], 'title' => $data['category'],'categories' => $data
+        ]);
+    }
+    public function add(): string
+    {
+        //retrive Question data
+
+        return view('categories/selected', [
             'category' => $data['category'], 'title' => $data['category'],'categories' => $data
         ]);
     }
