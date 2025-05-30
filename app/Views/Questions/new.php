@@ -25,7 +25,7 @@
 ?>
     <div class="row justify-content-between align-items-center" style="margin-bottom: 20px;">
         <?= form_label('Question:', 'question',['class'=>'col-lg-1 col-md-2 offset-1 offset-sm-0']) ?>
-        <?= form_input('title', '', ['placeholder'=> 'New Question...', 'class'=>'col-lg-7 col-md-4'], 'text')?>
+        <?= form_input('question', '', ['placeholder'=> 'New Question...', 'class'=>'col-lg-7 col-md-4'], 'text')?>
         <?= form_submit("addArticle", 'Add', ['class'=> 'col-lg-2 col-md-2 btn btn-primary']) ?>
     </div>
     <div class="row justify-content-between align-items-start">
@@ -35,13 +35,25 @@
             <?php if($categoryId == $categoryBtn['id']): ?>
             <?= form_input('selected[]', $categoryBtn['category'], ['class'=>"btn btn-outline-secondary active", 'data-bs-toggle'=>"button"], 'button' ) ?>
 
+
+            <button role="button" class="btn btn-outline-warning col active" data-bs-toggle='button'>
+                <?= form_input('catOptions[]',  $categoryBtn['id'], ['class'=>'btn btn-outline-success col', 'checked'=>TRUE], 'checkbox',)?>
+                <?= form_label($categoryBtn['category']) ?>
+            </button>
+
             <?php else: ?>
             <?= form_input('selected[]', $categoryBtn['category'], ['class'=>"btn btn-outline-secondary", 'data-bs-toggle'=>"button"], 'button' ) ?>
 
             <?php endif; ?>
 
+            <?= form_input('selected[]', $categoryBtn['category'], ['class'=>"btn btn-outline-warning", 'data-bs-toggle'=>"button"], 'button' ) ?>
+
 
             <?php endforeach; ?>
+
+            <?php if(form){}else{}
+            
+            ?>
         </div>
         <div class="col-lg-2 col-md-2"></div>
         <?= form_close() ?>

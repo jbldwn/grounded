@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use App\Models\CategoriesModel;
 
-class Categories extends BaseController
+class Questions extends BaseController
 {
     public function index(): string
     {
@@ -28,7 +28,7 @@ class Categories extends BaseController
 
         // dd($data);
 
-        return view('questions/add', [
+        return view('questions/new', [
             'category' => $data['category'], 'title' => $data['category'],'categories' => $data
         ]);
     }
@@ -36,7 +36,8 @@ class Categories extends BaseController
     {
         //retrive Question data
         $rawQuestion = $this->request->getPost('question');
-        dd($rawQuestion);
+        $rawSelected = $this->request->getPost('selected');
+        dd($rawSelected);
 
         return view('categories/selected', [
             'category' => $data['category'], 'title' => $data['category'],'categories' => $data
