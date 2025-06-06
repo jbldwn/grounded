@@ -76,12 +76,10 @@
     <!-- nav indicator -->
     <?= $this->renderSection("breadCrumb"); ?>
 
-    <!-- Page title and user guide -->
-    <?= view('partials/guide'); ?>
+    <!-- Completion message -->
     <?= $this->renderSection("message"); ?>
 
-
-    <?= $this->renderSection("Categories"); ?>
+    <!-- add content -->
     <?= $this->renderSection("content"); ?>
 </div>
 

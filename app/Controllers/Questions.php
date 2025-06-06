@@ -77,12 +77,15 @@ class Questions extends BaseController
         $CategoryModel = new CategoriesModel();
         
         
-        /* !!!!!!!!!!!!!!!!!!!!!!!!!!     Working on sending all categories to view     !!!!!!!!!!!!!!!!!!!!!!!!!! */
+        
         $ogCatData = $CategoryModel->find($ogCategory);
         $data = $CategoryModel->findAll();
 
         // establish completion message
-        $completionMessage = "The question <i>'" . $newQuestion['question'] . "'</i> added successfully to the <i>'" . $ogCatData['category'] . "'</i> category.";
+        $completionMessage = "The question <i>'" . $newQuestion['question'] . "'</i> added successfully to the following categories:";
+        //include previously selected categories to list out
+
+        /* !!!!!!!!!!!!!!!!!!!!!!!!!!     accessing previously selected categories to be listed on new.php     !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
         return view('questions/new', [
             'category' => $ogCatData['category'], 'title' => $ogCatData['category'], 'categories' => $data, 'categoryId' => $ogCatData['id'], 'msg' => $completionMessage

@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/default.php')?>
+<?= $this->extend('layouts/add.php')?>
 
 <?= $this-> section('breadCrumb') ?>
 <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -11,10 +11,17 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section("message") ?>
-<div style='margin: 20px;'>
+<div style='margin: 20px;' class='text-danger-emphasis'>
     <p><?= $msg ?></p>
+    <!-- List out categories question was previously added to -->
+    <ul>
+        <!-- if variable exists, list categories -->
+        <li>A category example</li>
+        <li>A category example</li>
+        <li>A category example</li>
+        <!-- else nothing -->
+    </ul>
 </div>
-<?= $title ?>
 <?= $this->endSection(); ?>
 
 <?= $this-> section('content') ?>
