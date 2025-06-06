@@ -72,6 +72,7 @@
 
     <!-- slogan -->
     <?= $this->renderSection("welcome"); ?>
+    <?= $this->renderSection("message"); ?>
 
     <!-- nav indicator -->
     <?= $this->renderSection("breadCrumb"); ?>

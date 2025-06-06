@@ -10,6 +10,13 @@
 </div>
 <?= $this->endSection(); ?>
 
+<?= $this->section("message") ?>
+<div style='margin: 20px;'>
+    <p><?= $msg ?></p>
+</div>
+<?= $title ?>
+<?= $this->endSection(); ?>
+
 <?= $this-> section('content') ?>
 
 <div class="categories">
@@ -33,22 +40,22 @@
         <div class="col-lg-7 col-md-4">
             <?php foreach($categories as $categoryBtn): ?>
             <?php if($categoryId == $categoryBtn['id']): ?>
-            <!-- Working Buttong -->
+            <!-- Selected Button -->
             <input type="checkbox" name='selected[]' checked class="btn-check" id="btn-check-<?= $categoryBtn['id']?>"
-                value="<?= $categoryBtn['id'] ?>" autocomplete="off">
+                value=<?= $categoryBtn['id'].'og' ?> autocomplete="off">
             <label class="btn btn-outline-warning"
                 for="btn-check-<?= $categoryBtn['id']?>"><?= $categoryBtn['category'] ?></label>
-            <!-- END Working Buttong -->
+            <!-- END Working Button -->
 
 
 
             <?php else: ?>
-            <!-- Working Buttong -->
+            <!-- Working Button -->
             <input type="checkbox" name='selected[]' class="btn-check" id="btn-check-<?= $categoryBtn['id']?>"
                 value="<?= $categoryBtn['id'] ?>" autocomplete="off">
             <label class="btn btn-outline-warning"
                 for="btn-check-<?= $categoryBtn['id']?>"><?= $categoryBtn['category'] ?></label>
-            <!-- END Working Buttong -->
+            <!-- END Working Button -->
 
             <?php endif; ?>
 

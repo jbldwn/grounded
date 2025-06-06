@@ -7,5 +7,10 @@ class CategoriesModel extends Model
 {
     protected $table = 'categories';
     protected $allowedFields = ['category', 'id'];
+
+    public function getCategories()
+    {
+        return $this->findAll();
+    }
 }
 ?>

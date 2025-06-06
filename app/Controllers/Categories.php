@@ -7,9 +7,6 @@ class Categories extends BaseController
 {
     public function index(): string
     {
-        //open DB to return all categories
-        $db = db_connect();
-
         // new CategoriesModel to house data
         $model = new CategoriesModel();
 
@@ -22,9 +19,6 @@ class Categories extends BaseController
     }
     public function selected($id): string
     {
-        //open DB to return all categories
-
-        $db = db_connect();
 
         // new CategoriesModel to house data
         $model = new CategoriesModel();
@@ -40,9 +34,6 @@ class Categories extends BaseController
     }
     public function new(): string
     {
-        //open DB to return all categories
-        $db = db_connect();
-
         // new CategoriesModel to house data
         $model = new CategoriesModel();
 
@@ -94,9 +85,6 @@ class Categories extends BaseController
     }
     public function questionLogged($data): string
     {
-        //open DB to return all categories
-        $db = db_connect();
-
         // new CategoriesModel to house data
         $model = new CategoriesModel();
 
@@ -111,9 +99,6 @@ class Categories extends BaseController
     }
     public function remove(): string
     {
-        //open DB to return all categories
-        $db = db_connect();
-
         // new CategoriesModel to house data
         $model = new CategoriesModel();
 
